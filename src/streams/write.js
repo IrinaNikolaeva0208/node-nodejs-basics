@@ -1,5 +1,11 @@
+import { createWriteStream } from "fs";
+
 const write = async () => {
-    // Write your code here 
+    const ws = createWriteStream("./files/fileToWrite.txt");
+    process.stdin.on("data", (chunk) => {
+        ws.write(chunk.toString().trim());
+        process.exit();
+    });
 };
 
 await write();
