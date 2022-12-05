@@ -1,5 +1,7 @@
-const spawnChildProcess = async (args) => {
-    // Write your code here
+import { fork } from "child_process";
+
+const spawnChildProcess = async (...args) => {
+    fork("./files/script.js", args);
 };
 
-spawnChildProcess();
+spawnChildProcess(0, 0);
