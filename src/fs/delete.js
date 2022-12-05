@@ -1,8 +1,8 @@
-import { rm } from "fs";
-import { resolve } from "path";
-
+import { rm } from "node:fs";
+import { resolve } from "node:path";
+//use npm run
 const remove = async () => {
-    rm(resolve("files", "fileToRemove.txt"), (err) => {
+    rm(resolve("src", "fs", "files", "fileToRemove.txt"), (err) => {
         if (err) throw new Error("FS operation failed");
     });
 };

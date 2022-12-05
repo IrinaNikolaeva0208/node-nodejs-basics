@@ -1,7 +1,8 @@
-import { readdir } from "fs";
-
+import { readdir } from "node:fs";
+import { resolve } from "node:path";
+//use npm run
 const list = async () => {
-    readdir("files", (err, files) => {
+    readdir(resolve("src", "fs", "files"), (err, files) => {
         if (err) throw new Error("FS operation failed");
         console.log(files);
     });
