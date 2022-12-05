@@ -1,5 +1,8 @@
-const spawnChildProcess = async (args) => {
-    // Write your code here
+import { fork } from "node:child_process";
+import { resolve } from "node:path";
+//use npm run
+const spawnChildProcess = async (...args) => {
+    fork(resolve("src", "cp", "files", "script.js"), args);
 };
 
-spawnChildProcess();
+spawnChildProcess(0, 0);
